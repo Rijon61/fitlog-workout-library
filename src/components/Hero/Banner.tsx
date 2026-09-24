@@ -12,8 +12,8 @@ const Banner = () => {
             Workout Library
           </h3>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-white mt-5 md:mt-10">
-            Train with intent.Log every set.
+          <h1 className="font-oswald text-5xl md:text-7xl font-bold text-white mt-5 md:mt-10">
+            Train with intent.<br/> Log every set.
           </h1>
 
           <p className="text-gray-400 mt-5">

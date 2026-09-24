@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import NavLoge from "@/assets/logo.png";
 import Image from "next/image";
+import NavLink from "./NavLink";
 
 const NavBer = () => {
   return (
@@ -54,19 +55,12 @@ const NavBer = () => {
                   height={28}
                 />
 
-                <h1 className="font-bold text-2xl">FITLOG</h1>
+                <h1 className=" font-oswald font-bold text-2xl">FITLOG</h1>
               </div>
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">
-              <li>
-                <Link href={"/"}>Workouts</Link>
-              </li>
-              <li>
-                <Link href={""}>My Plan</Link>
-              </li>
-            </ul>
+            <NavLink/>
           </div>
           <div className="navbar-end gap-2">
             <Link href="/my-plan">
