@@ -3,6 +3,7 @@ import React from "react";
 import NavLoge from "@/assets/logo.png";
 import Image from "next/image";
 import NavLink from "./NavLink";
+import NavBerBtn from "./NavBerBtn";
 
 const NavBer = () => {
   return (
@@ -62,15 +63,7 @@ const NavBer = () => {
           <div className="navbar-center hidden lg:flex">
             <NavLink/>
           </div>
-          <div className="navbar-end gap-2">
-            <Link href="/my-plan">
-               <button className=" px-4 py-1 rounded-[10px] hover:bg-white/15 font-bold cursor-pointer transition-transform duration-150 active:scale-95">Plan</button> 
-            </Link>
-
-            <Link href="/saved">
-              <button className=" px-4 py-1 rounded-[10px] hover:bg-white/15 font-bold cursor-pointer transition-transform duration-150 active:scale-95">Saved</button>
-            </Link>
-          </div>
+          <NavBerBtn/>
         </div>
       </div>
     </nav>

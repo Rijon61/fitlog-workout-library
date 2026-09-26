@@ -12,8 +12,8 @@ const NavLink = () => {
             pathname === "/" ? "bg-[#1A2312] text-[#C2F800]" : ""}`}>Workouts</Link>
       </li>
       <li>
-        <Link href={"/"} className={`px-4 py-1 rounded-2xl ${
-            pathname === "" ? "bg-[#1A2312] text-[#C2F800]" : ""}`}>My Plan</Link>
+        <Link href={"/my-plan"} className={`px-4 py-1 rounded-2xl ${
+            pathname === "/my-plan" ? "bg-[#1A2312] text-[#C2F800]" : ""}`}>My Plan</Link>
       </li>
     </ul>
   );

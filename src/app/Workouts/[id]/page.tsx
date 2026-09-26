@@ -1,9 +1,9 @@
+import PlanWorkoutButton from "@/components/WorkoutDetailsBtn/planWorkoutButton";
+import SavedWorkoutButton from "@/components/WorkoutDetailsBtn/SavedWorkoutButton";
 import { getWorkoutItems } from "@/lib/ApiData";
 import WorkoutItemsType from "@/Type/WorkoutItems";
 import Image from "next/image";
 import React from "react";
-import { HiSave } from "react-icons/hi";
-import { IoBagAdd } from "react-icons/io5";
 
 interface WorkoutDetailsPageProps {
   params: Promise<{
@@ -99,14 +99,8 @@ const WorkoutDetailsPage = async ({ params }: WorkoutDetailsPageProps) => {
             }
         </ul>
         <div className="flex gap-4 pt-4">
-            <button className="flex gap-1.5 items-center px-3 py-1 border bg-[#CCFF00] rounded-[10px] text-black hover:scale-105 active:scale-95 transition-all duration-300 ease-in-out">
-                <span><IoBagAdd /></span>
-                <p>Add to today's plan</p>
-            </button>
-            <button className="flex gap-1.5 items-center px-3 py-1 border rounded-[10px] hover:scale-105 active:scale-95 transition-all duration-300 ease-in-out">
-                <span><HiSave /></span>
-                <p>Save for later</p>  
-            </button>
+            <PlanWorkoutButton workOut={workOut} />
+            <SavedWorkoutButton workOut={workOut}/>
         </div>
 
       </div>
