@@ -63,7 +63,7 @@ const NavBer = () => {
           <div className="navbar-center hidden lg:flex">
             <NavLink/>
           </div>
-          <NavBerBtn/>
+          <NavBerBtn />
         </div>
       </div>
     </nav>

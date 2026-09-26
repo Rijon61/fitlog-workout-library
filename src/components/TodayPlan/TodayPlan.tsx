@@ -3,6 +3,8 @@ import { WorkoutsContext } from "@/context/WorkoutsProvider";
 import React, { useContext, useState } from "react";
 import PlanCard from "./PlanCard";
 import Link from "next/link";
+import SavedCard from "./SavedCard";
+import ShotBy from "../ShortBy/ShotBy";
 
 type Tab = "today" | "saved";
 const TodayPlan = () => {
@@ -74,9 +76,13 @@ const TodayPlan = () => {
         )}
       </div>
 
-      <div className="w-full">
+      <div className="w-full items-center">
+        <div className="flex justify-end mt-10">
+          <ShotBy tab ={isToday ? "today" : "saved"}/>
+        </div>
+
         {/* Tabs */}
-        <div className="tabs tabs-lift pt-5 flex gap-2">
+        <div className="tabs tabs-lift  flex gap-2">
           {/*  Today's Plan  */}
           <input
             type="radio"
@@ -89,22 +95,24 @@ const TodayPlan = () => {
 
           <div className="tab-content ">
             {addToPlanWorkout.length == 0 ? (
-              <div className="rounded-3xl bg-[#1A1D23] p-4" >
-              <div className="flex min-h-62.5 flex-col items-center justify-center text-center">
-                <h2 className="text-2xl font-bold uppercase text-white">
-                  Nothing here yet
-                </h2>
+              <div className="rounded-3xl bg-[#1A1D23] p-4">
+                <div className="flex min-h-62.5 flex-col items-center justify-center text-center">
+                  <h2 className="text-2xl font-bold uppercase text-white">
+                    Nothing here yet
+                  </h2>
 
-                <p className="mt-4 text-lg text-[#A7ABB5]">
-                  Browse the library and add a lift to get today moving.
-                </p>
+                  <p className="mt-4 text-lg text-[#A7ABB5]">
+                    Browse the library and add a lift to get today moving.
+                  </p>
 
-                <Link href={'/'}><button className=" btn mt-8 rounded-2xl border-none bg-[#CCFF00] px-7 text-black hover:bg-[#CCFF00] hover:brightness-110">
-                  Go to workouts
-                </button></Link>
+                  <Link href={"/"}>
+                    <button className=" btn mt-8 rounded-2xl border-none bg-[#CCFF00] px-7 text-black hover:bg-[#CCFF00] hover:brightness-110">
+                      Go to workouts
+                    </button>
+                  </Link>
+                </div>
               </div>
-
-              </div>            ) : (
+            ) : (
               <div className="grid gap-5">
                 {addToPlanWorkout.map((planCard) => (
                   <PlanCard key={planCard.id} planCard={planCard} />
@@ -123,27 +131,29 @@ const TodayPlan = () => {
             onClick={() => setActiveTab("saved")}
           />
 
-           <div className="tab-content ">
+          <div className="tab-content ">
             {addToSavedWorkout.length == 0 ? (
-              <div className="rounded-3xl bg-[#1A1D23] p-4" >
-              <div className="flex min-h-62.5 flex-col items-center justify-center text-center">
-                <h2 className="text-2xl font-bold uppercase text-white">
-                  Nothing here yet
-                </h2>
+              <div className="rounded-3xl bg-[#1A1D23] p-4">
+                <div className="flex min-h-62.5 flex-col items-center justify-center text-center">
+                  <h2 className="text-2xl font-bold uppercase text-white">
+                    Nothing here yet
+                  </h2>
 
-                <p className="mt-4 text-lg text-[#A7ABB5]">
-                  Browse the library and add a lift to get today moving.
-                </p>
+                  <p className="mt-4 text-lg text-[#A7ABB5]">
+                    Browse the library and add a lift to get today moving.
+                  </p>
 
-                <Link href={'/'}><button className=" btn mt-8 rounded-2xl border-none bg-[#CCFF00] px-7 text-black hover:bg-[#CCFF00] hover:brightness-110">
-                  Go to workouts
-                </button></Link>
+                  <Link href={"/"}>
+                    <button className=" btn mt-8 rounded-2xl border-none bg-[#CCFF00] px-7 text-black hover:bg-[#CCFF00] hover:brightness-110">
+                      Go to workouts
+                    </button>
+                  </Link>
+                </div>
               </div>
-
-              </div>            ) : (
+            ) : (
               <div className="grid gap-5">
-                {addToSavedWorkout.map((planCard) => (
-                  <PlanCard key={planCard.id} planCard={planCard} />
+                {addToSavedWorkout.map((savedCard) => (
+                  <SavedCard key={savedCard.id} savedCard={savedCard} />
                 ))}
               </div>
             )}

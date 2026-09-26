@@ -1,5 +1,6 @@
 import Image from "next/image";
 import BannerImage from "@/assets/banner.png";
+import Link from "next/link";
 
 const Banner = () => {
   return (
@@ -12,7 +13,7 @@ const Banner = () => {
             Workout Library
           </h3>
 
-          <h1 className="font-oswald text-5xl md:text-7xl font-bold text-white mt-5 md:mt-10">
+          <h1 className="font-oswald text-5xl md:text-7xl font-bold text-white mt-5 md:mt-10 uppercase">
             Train with intent.<br/> Log every set.
           </h1>
 
@@ -21,7 +22,7 @@ const Banner = () => {
             lock it into today's plan, and watch the week's work add up.
           </p>
 
-          <button
+          <Link href="#library"><button
             className="
               mt-6 px-6 py-3
               bg-[#C2F800]
@@ -33,7 +34,7 @@ const Banner = () => {
             "
           >
             BROWSE WORKOUTS
-          </button>
+          </button></Link>
         </div>
 
         {/* Image */}
