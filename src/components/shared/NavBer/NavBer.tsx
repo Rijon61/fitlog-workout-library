@@ -42,7 +42,7 @@ const NavBer = () => {
                   <Link href={"/"}>Workouts</Link>
                 </li>
                 <li>
-                  <Link href={""}>My Plan</Link>
+                  <Link href={"/my-plan"}>My Plan</Link>
                 </li>
               </ul>
             </div>
